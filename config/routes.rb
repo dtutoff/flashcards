@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'cards/new'
-  get 'decks/new'
-  get 'decks/create_card'
   resources :users
+  resource :session, only: %i[new create destroy]
+
+  root 'home#index'
 end

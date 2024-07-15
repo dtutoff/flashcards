@@ -1,0 +1,12 @@
+<h1>Welcome to the Flashcards app!</h1>
+
+<% if user_signed_in? %>
+  <p><%="Hello #{ current_user[:name] }"%></p>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to 'Sing Out', session_path, data: { turbo_method: :delete }, class: '' %>
+<% else %>
+  <%= link_to 'Sing In', new_session_path, class: '' %>
+  <%= link_to 'Sing Up', new_user_path, class: '' %>
+<% end %>

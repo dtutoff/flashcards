@@ -10,22 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_10_103311) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_10_103437) do
+  create_table "cards", force: :cascade do |t|
+    t.integer "deck_id"
+    t.string "front_side"
+    t.string "back_side"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deck_id"], name: "index_cards_on_deck_id"
+  end
+
   create_table "decks", force: :cascade do |t|
-    t.string "user"
+    t.integer "user_id"
+    t.string "name"
     t.string "cards"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_decks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.string "decks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_users_on_name", unique: true
   end
 
+  add_foreign_key "cards", "decks"
+  add_foreign_key "decks", "users"
 end
