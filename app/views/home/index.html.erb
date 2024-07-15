@@ -2,6 +2,9 @@
 
 <% if user_signed_in? %>
   <p><%="Hello #{ current_user[:name] }"%></p>
+  <p>
+    <%= link_to "Edit profile", edit_user_path(current_user) %>
+  </p>
 <% end %>
 
 <% if user_signed_in? %>

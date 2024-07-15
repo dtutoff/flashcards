@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :require_user_no_authentication, only: %i[create]
+  before_action :require_user_has_authentication, only: %i[destroy]
 
   def create
     user = User.find_by email: params[:email]
