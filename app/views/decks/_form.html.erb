@@ -1,0 +1,7 @@
+<%= form_with  model: @deck do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: 'Name', class: '' %>
+  </p>
+  <%= f.submit 'Create', class: '' %>
+<% end %>

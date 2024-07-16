@@ -1,0 +1,9 @@
+<% @decks.each do |deck| %>
+  <ul>
+    <li>
+      <%= deck[:name] %>
+    </li>
+  </ul>
+<% end %>
+
+<%= link_to 'create deck', new_deck_path, class: '' %>

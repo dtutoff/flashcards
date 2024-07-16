@@ -11,6 +11,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <% if  user_signed_in? %>
+        <%= render 'shared/menu' %>
+      <% end %>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+  <footer>
+
+  </footer>
   </body>
 </html>
