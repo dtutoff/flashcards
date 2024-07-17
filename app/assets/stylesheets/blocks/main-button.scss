@@ -1,0 +1,15 @@
+.main-button {
+  background-color: transparent;
+  color: $text-color;
+  border: 1px solid $border-color;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100px;
+  outline-color: $primary-color;
+
+  &:hover, &:focus {
+    border: 1px solid $primary-color;
+    color: $primary-color;
+  }
+}

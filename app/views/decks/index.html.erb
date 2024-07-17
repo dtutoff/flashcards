@@ -1,9 +1,15 @@
-<% @decks.each do |deck| %>
-  <ul>
-    <li>
-      <%= deck[:name] %>
-    </li>
-  </ul>
-<% end %>
+<section class="decks">
+  <h1 class="decks__title page-title">Decks list</h1>
 
-<%= link_to 'create deck', new_deck_path, class: '' %>
+  <ul class="decks__list cards-list">
+    <% @decks.each do |deck| %>
+      <li class="cards-list__item">
+        <h3 class="cards-list__title"><%= deck[:name] %></h3>
+        <p class="cards-list__date"><%= format_date_time(deck[:created_at]) %></p>
+      </li>
+    <% end %>
+    <li class="cards-list__item cards-list__item--dotted">
+      <%= link_to 'create deck', new_deck_path, class: 'cards-list__link' %>
+    </li>
+   </ul>
+</section>

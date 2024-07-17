@@ -1,0 +1,20 @@
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid $border-color;
+
+  p {
+    font-size: 14px;
+  }
+
+  .page-footer__link {
+    color: $text-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

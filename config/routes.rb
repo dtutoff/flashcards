@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :decks
   resources :cards
 
+  get 'info', to: 'home#info'
+
   root 'home#index'
 end

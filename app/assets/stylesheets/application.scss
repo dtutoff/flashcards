@@ -1,23 +1,44 @@
-@font-face {
-  font-family: 'Roboto';
-  src: font-url('Roboto-Bold.ttf') format('woff');
-  font-weight: 900;
-}
+@import "fonts";
+@import "variables";
 
-@font-face {
-  font-family: 'Roboto';
-  src: font-url('Roboto-Regular.ttf') format('woff');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Roboto';
-  src: font-url('Roboto-Light.ttf') format('woff');
-  font-weight: 300;
+* {
+  box-sizing: border-box;
 }
 
 body {
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
+
+  height: 100vh;
+
+  position: relative; // for page-footer
 }
+
+// Common blocks
+@import "blocks/page-container";
+@import "blocks/page-title";
+@import "blocks/page-form";
+@import "blocks/main-button";
+@import "blocks/cards-list";
+
+// Page Header
+@import "blocks/page-header";
+@import "blocks/logo";
+@import "blocks/main-menu";
+@import "blocks/dropdown";
+
+// Page main
+@import "blocks/home";
+@import "blocks/sing-in";
+@import "blocks/user-profile";
+@import "blocks/decks";
+
+// Page footer
+@import "blocks/page-footer";
+

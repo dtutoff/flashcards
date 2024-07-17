@@ -1,0 +1,26 @@
+.page-form__field {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.page-form__label {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 8px;
+  color: $text-color;
+}
+
+.page-form__input {
+  width: 300px;
+  padding: 10px;
+}
+
+.page-form__button {
+  margin-top: 20px;
+}
+
+.page-form__button.main-button {
+  width: 100%;
+}

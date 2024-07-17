@@ -1,14 +1,5 @@
-<h1>Sing in</h1>
+<section class="sing-in">
+  <h1 class="page-title">Sing in</h1>
+  <%= render 'form' %>
+</section>
 
-<%= form_with  url: session_path do |f| %>
-  <p>
-    <%= f.label :email %>
-    <%= f.text_field :email, placeholder: 'Email', class: '' %>
-  </p>
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field :password, class: '' %>
-  </p>
-
-  <%= f.submit 'Sing In', class: '' %>
-<% end %>

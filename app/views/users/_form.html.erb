@@ -1,19 +1,21 @@
 <%= form_with  model: @user do |u| %>
-  <p>
-    <%= u.label :name %>
-    <%= u.text_field :name, placeholder: 'Name', class: '' %>
-  </p>
-  <p>
-    <%= u.label :email %>
-    <%= u.text_field :email, placeholder: 'Email', class: '' %>
-  </p>
-  <p>
-    <%= u.label :password %>
-    <%= u.password_field :password, class: '' %>
-  </p>
-  <p>
-    <%= u.label :password_confirmation %>
-    <%= u.password_field :password_confirmation, class: '' %>
-  </p>
-  <%= u.submit (@user.new_record? ? 'Registration' : 'Save'), class: '' %>
+  <div class="page-form">
+    <p class="page-form__field">
+      <%= u.label :name, class: 'page-form__label' %>
+      <%= u.text_field :name, placeholder: 'Name', class: 'page-form__input' %>
+    </p>
+    <p class="page-form__field">
+      <%= u.label :email, class: 'page-form__label' %>
+      <%= u.text_field :email, placeholder: 'Email', class: 'page-form__input' %>
+    </p>
+    <p class="page-form__field">
+      <%= u.label :password, class: 'page-form__label' %>
+      <%= u.password_field :password, class: 'page-form__input' %>
+    </p>
+    <p class="page-form__field">
+      <%= u.label :password_confirmation, class: 'page-form__label' %>
+      <%= u.password_field :password_confirmation, class: 'page-form__input' %>
+    </p>
+    <%= u.submit (@user.new_record? ? 'Registration' : 'Save'), class: 'page-form__button main-button' %>
+  </div>
 <% end %>
