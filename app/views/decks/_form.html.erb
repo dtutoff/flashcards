@@ -4,6 +4,6 @@
       <%= f.label :name, class: 'page-form__label' %>
       <%= f.text_field :name, placeholder: 'Name', class: 'page-form__input' %>
     </p>
-    <%= f.submit 'Create', class: 'page-form__button main-button' %>
+    <%= f.submit (@deck.new_record? ? 'Create' : 'Save'), class: 'page-form__button main-button' %>
   </div>
 <% end %>

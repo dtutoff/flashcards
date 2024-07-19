@@ -6,10 +6,17 @@
       <li class="cards-list__item">
         <h3 class="cards-list__title"><%= deck[:name] %></h3>
         <p class="cards-list__date"><%= format_date_time(deck[:created_at]) %></p>
+        <div class="cards-list__container">
+          <%= link_to 'Edit', edit_deck_path(deck), class: 'cards-list__link' %>
+          <%= link_to 'Add card', edit_deck_path(deck), class: 'cards-list__link' %>
+          <%= link_to 'Delete', deck_path(deck), data: { 'turbo-method': :delete, turbo_confirm: 'Are you sure you want to delete this deck?'}, class: 'cards-list__link cards-list__link--icon-del' %>
+        </div>
       </li>
     <% end %>
-    <li class="cards-list__item cards-list__item--dotted">
-      <%= link_to 'create deck', new_deck_path, class: 'cards-list__link' %>
+    <li class="cards-list__item cards-list__item--dotted cards-list__item--icon-plus">
+      <div class="cards-list__new-card">
+        <%= link_to 'create new deck', new_deck_path, class: 'cards-list__link cards-list__link--create-card' %>
+      </div>
     </li>
    </ul>
 </section>
