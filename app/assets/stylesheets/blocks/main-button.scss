@@ -1,5 +1,5 @@
 .main-button {
-  background-color: transparent;
+  background-color: rgba($text-color, .2);
   color: $text-color;
   border: 1px solid $border-color;
   padding: 10px;
@@ -9,6 +9,7 @@
   outline-color: $primary-color;
 
   &:hover, &:focus {
+    background-color: rgba($primary-color, .2);
     border: 1px solid $primary-color;
     color: $primary-color;
   }
