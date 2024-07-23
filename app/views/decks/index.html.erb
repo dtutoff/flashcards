@@ -5,10 +5,11 @@
     <% @decks.each do |deck| %>
       <li class="cards-list__item">
         <h3 class="cards-list__title"><%= deck[:name] %></h3>
-        <p class="cards-list__date"><%= format_date_time(deck[:created_at]) %></p>
+        <p class="cards-list__text"><%= format_date_time(deck[:created_at]) %></p>
+        <p class="cards-list__text"><%= deck.cards.length > 0 ? "Has #{deck.cards.length} inside." : "Empty" %></p>
         <div class="cards-list__container">
           <%= link_to 'Edit', edit_deck_path(deck), class: 'cards-list__link' %>
-          <%= link_to 'Add card', edit_deck_path(deck), class: 'cards-list__link' %>
+          <%= link_to 'Add card', new_deck_card_path(deck), class: 'cards-list__link' %>
           <%= link_to 'Delete', deck_path(deck), data: { 'turbo-method': :delete, turbo_confirm: 'Are you sure you want to delete this deck?'}, class: 'cards-list__link cards-list__link--icon-del' %>
         </div>
       </li>
