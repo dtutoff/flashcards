@@ -1,1 +1,26 @@
-<h1>Decks will be here soon!</h1>
+<section class="decks">
+<h1><%= @deck[:name] %></h1>
+
+<% if @deck.cards.length > 0 %>
+  <ul class="cards-list">
+    <% @deck.cards.each do |card| %>
+      <li class="cards-list__item">
+        <div class="card-container">
+          <div class="card">
+            <div class="card-style card-front">
+              <%= card[:front_side] %>
+            </div>
+
+            <div class="card-style card-back">
+              <%= card[:back_side] %>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<%else %>
+  <p>No cards added. Please add <%= link_to 'new card', new_deck_card_path(@deck), class: 'cards-list__link', style: 'text-decoration: underline' %>.</p>
+<% end %>
+</section>
+

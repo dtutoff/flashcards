@@ -15,9 +15,7 @@ body {
   margin: 0;
   padding: 0;
 
-  height: 100vh;
-
-  position: relative; // for page-footer
+  min-height: 100vh;
 }
 
 // Common blocks
@@ -25,7 +23,9 @@ body {
 @import "blocks/page-title";
 @import "blocks/page-form";
 @import "blocks/main-button";
+@import "blocks/decks-list";
 @import "blocks/cards-list";
+@import "blocks/card";
 
 // Page Header
 @import "blocks/page-header";
@@ -34,6 +34,7 @@ body {
 @import "blocks/dropdown";
 
 // Page main
+@import "blocks/page-main";
 @import "blocks/home";
 @import "blocks/sing-in";
 @import "blocks/user-profile";

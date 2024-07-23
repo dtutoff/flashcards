@@ -13,7 +13,8 @@
     }
 
     .dropdown__button {
-      background-color: rgba($primary-color, .2);
+      background-color: $primary-color;
+      color: $text-color-hover;
     }
   }
 }

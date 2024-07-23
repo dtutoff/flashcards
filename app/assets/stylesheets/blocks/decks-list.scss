@@ -1,0 +1,133 @@
+.decks-list {
+  display: flex;
+  gap: 50px;
+  width: 100%;
+}
+
+.decks-list__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex: 1;
+}
+
+.decks-list__new-card {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.decks-list__item {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  list-style: none;
+  width: 150px;
+  height: 200px;
+  padding: 10px;
+  box-shadow: 0 4px 8px 1px rgba($text-color, .3);
+  background-color: $card-front-bg;
+
+  position: relative;
+}
+
+.decks-list__item--with-cards {
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -6px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $text-color;
+    background-color: rgba($text-color, .2);
+    z-index: -1;
+  }
+
+  &:after {
+    top: -10px;
+    left: -12px;
+  }
+}
+
+.decks-list__title {
+  font-size: 24px;
+  margin: 0 0 5px 0;
+}
+
+.decks-list__text {
+  font-size: 12px;
+  margin: 0 0 5px 0;
+}
+
+.decks-list__link {
+  text-decoration: none;
+  color: $text-color;
+
+  &:hover {
+    color: $deck-link-text-hover;
+  }
+}
+
+.decks-list__item--dotted {
+  border: 2px dotted $text-color;
+  align-items: center;
+  text-align: center;
+  box-shadow: none;
+  background-color: transparent;
+  padding: 0;
+
+  &:before, &:after {
+    display: none;
+  }
+
+  &:hover {
+    border-color: $primary-color;
+  }
+}
+
+.decks-list__item--icon-plus {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    background: url('icon-create.svg') no-repeat 100% 0;
+    background-size: 30px;
+    background-color: white;
+  }
+}
+
+.decks-list__link--create-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.decks-list__link--icon-del {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 0;
+  width: 15px;
+  height: 15px;
+  background: url('icon-delete.svg') no-repeat 0 0;
+  background-size: contain;
+
+  &:hover {
+    background-image: url('icon-delete-active.svg');
+  }
+}

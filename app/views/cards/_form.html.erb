@@ -1,4 +1,5 @@
 <%= form_with model: [@deck, @card] do |f| %>
+  <h2 class="page-title">New card for "<%= @deck[:name] %>" deck:</h2>
   <div class="page-form">
     <p class="page-form__field">
       <%= f.label :front_side, class: 'page-form__label' %>

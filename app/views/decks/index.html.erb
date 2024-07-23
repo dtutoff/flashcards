@@ -1,22 +1,25 @@
 <section class="decks">
   <h1 class="decks__title page-title">Decks list</h1>
 
-  <ul class="decks__list cards-list">
+  <ul class="decks__list decks-list">
     <% @decks.each do |deck| %>
-      <li class="cards-list__item">
-        <h3 class="cards-list__title"><%= deck[:name] %></h3>
-        <p class="cards-list__text"><%= format_date_time(deck[:created_at]) %></p>
-        <p class="cards-list__text"><%= deck.cards.length > 0 ? "Has #{deck.cards.length} inside." : "Empty" %></p>
-        <div class="cards-list__container">
-          <%= link_to 'Edit', edit_deck_path(deck), class: 'cards-list__link' %>
-          <%= link_to 'Add card', new_deck_card_path(deck), class: 'cards-list__link' %>
-          <%= link_to 'Delete', deck_path(deck), data: { 'turbo-method': :delete, turbo_confirm: 'Are you sure you want to delete this deck?'}, class: 'cards-list__link cards-list__link--icon-del' %>
+      <li class="decks-list__item<%= deck.cards.length > 0 ? ' decks-list__item--with-cards' : '' %>">
+      <h3 class="decks-list__title">
+          <%= link_to deck[:name], deck_path(deck), class: 'decks-list__link' %>
+        </h3>
+        <p class="decks-list__text"><%= format_date_time(deck[:created_at]) %></p>
+        <% cards = deck.cards.length %>
+        <p class="decks-list__text"><%= cards > 0 ? "#{deck.cards.length} card#{cards > 1 ? 's' :  ''} inside." : "Empty" %></p>
+        <div class="decks-list__container">
+          <%= link_to 'Edit', edit_deck_path(deck), class: 'decks-list__link' %>
+          <%= link_to 'Add card', new_deck_card_path(deck), class: 'decks-list__link' %>
+          <%= link_to 'Delete', deck_path(deck), data: { 'turbo-method': :delete, turbo_confirm: 'Are you sure you want to delete this deck?'}, class: 'decks-list__link decks-list__link--icon-del' %>
         </div>
       </li>
     <% end %>
-    <li class="cards-list__item cards-list__item--dotted cards-list__item--icon-plus">
-      <div class="cards-list__new-card">
-        <%= link_to 'create new deck', new_deck_path, class: 'cards-list__link cards-list__link--create-card' %>
+    <li class="decks-list__item decks-list__item--dotted decks-list__item--icon-plus">
+      <div class="decks-list__new-card">
+        <%= link_to 'create new deck', new_deck_path, class: 'decks-list__link decks-list__link--create-card' %>
       </div>
     </li>
    </ul>
