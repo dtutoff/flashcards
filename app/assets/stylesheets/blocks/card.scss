@@ -1,20 +1,25 @@
 .card-container {
-  margin-top: 30px;
   background-color: transparent;
-  width: 200px;
-  height: 250px;
   perspective: 600px;
   font-size: 20px;
+
+  &:hover {
+    .card__container {
+      transition: opacity 1s;
+      opacity: 1;
+    }
+  }
 }
 
 .card {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 250px;
   text-align: center;
   transition: transform 1s;
   cursor: pointer;
   transform-style: preserve-3d;
+  margin-bottom: 10px;
 }
 
 .card-container:hover .card {
@@ -45,4 +50,21 @@
   background-color: $card-back-bg;
   color: $card-back-text-color;
   transform: rotateY(180deg);
+}
+
+.card__container {
+  opacity: 0;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.card__link {
+  text-decoration: none;
+  color: $text-color;
+  font-size: 18px;
+
+  &:hover {
+    color: $primary-color;
+  }
 }

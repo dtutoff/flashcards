@@ -1,7 +1,9 @@
 .decks-list {
-  display: flex;
-  gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   width: 100%;
+  padding: 0;
 }
 
 .decks-list__container {
@@ -24,8 +26,10 @@
   justify-content: center;
   flex-direction: column;
   list-style: none;
-  width: 150px;
-  height: 200px;
+  justify-self: center;
+  align-self: center;
+  width: 200px;
+  height: 250px;
   padding: 10px;
   box-shadow: 0 4px 8px 1px rgba($text-color, .3);
   background-color: $card-front-bg;
@@ -79,10 +83,6 @@
   box-shadow: none;
   background-color: transparent;
   padding: 0;
-
-  &:before, &:after {
-    display: none;
-  }
 
   &:hover {
     border-color: $primary-color;

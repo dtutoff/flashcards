@@ -1,6 +1,7 @@
 <section class="decks">
-  <h1 class="decks__title page-title">Decks list</h1>
-
+  <div class="decks__container">
+    <h1 class="decks__title">Decks:</h1>
+  </div>
   <ul class="decks__list decks-list">
     <% @decks.each do |deck| %>
       <li class="decks-list__item<%= deck.cards.length > 0 ? ' decks-list__item--with-cards' : '' %>">
@@ -17,7 +18,7 @@
         </div>
       </li>
     <% end %>
-    <li class="decks-list__item decks-list__item--dotted decks-list__item--icon-plus">
+    <li class="decks-list__item decks-list__item--dotted">
       <div class="decks-list__new-card">
         <%= link_to 'create new deck', new_deck_path, class: 'decks-list__link decks-list__link--create-card' %>
       </div>

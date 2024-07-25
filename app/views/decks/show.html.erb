@@ -1,11 +1,17 @@
 <section class="decks">
-<h1><%= @deck[:name] %></h1>
-
+  <div class="decks__container">
+    <h1 class="decks__title"><%= @deck[:name] %></h1>
+    <%= link_to 'Add card +', new_deck_card_path(@deck), class: 'decks__link border-button' %>
+  </div>
 <% if @deck.cards.length > 0 %>
   <ul class="cards-list">
     <% @deck.cards.each do |card| %>
       <li class="cards-list__item">
         <div class="card-container">
+          <div class="card__container">
+            <%= link_to 'Edit', edit_deck_card_path(@deck, card), class: 'card__link' %>
+            <%= link_to 'Delete', deck_card_path(@deck, card), data: { 'turbo-method': :delete, turbo_confirm: 'Are you sure?'}, class: 'card__link' %>
+          </div>
           <div class="card">
             <div class="card-style card-front">
               <%= card[:front_side] %>

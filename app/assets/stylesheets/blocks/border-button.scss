@@ -1,0 +1,12 @@
+.border-button{
+  padding: 5px 10px;
+  text-decoration: none;
+  color: $text-color;
+  border: 1px solid $text-color;
+  font-weight: 300;
+
+  &:hover {
+    color: $primary-color;
+    border-color: $primary-color;
+  }
+}
