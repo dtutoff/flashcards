@@ -1,0 +1,17 @@
+.main-menu__list {
+  display: flex;
+  gap: 20px;
+}
+
+.main-menu__item {
+  list-style: none;
+}
+
+.main-menu__link {
+  text-decoration: none;
+  color: $text-color;
+
+  &:hover {
+    color: $primary-color;
+  }
+}

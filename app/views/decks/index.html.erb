@@ -1,0 +1,27 @@
+<section class="decks">
+  <div class="decks__container">
+    <h1 class="decks__title">Decks:</h1>
+  </div>
+  <ul class="decks__list decks-list">
+    <% @decks.each do |deck| %>
+      <li class="decks-list__item<%= deck.cards.length > 0 ? ' decks-list__item--with-cards' : '' %>">
+      <h3 class="decks-list__title">
+          <%= link_to deck[:name], deck_path(deck), class: 'decks-list__link' %>
+        </h3>
+        <p class="decks-list__text"><%= format_date_time(deck[:created_at]) %></p>
+        <% cards = deck.cards.length %>
+        <p class="decks-list__text"><%= cards > 0 ? "#{deck.cards.length} card#{cards > 1 ? 's' :  ''} inside." : "Empty" %></p>
+        <div class="decks-list__container">
+          <%= link_to 'Edit', edit_deck_path(deck), class: 'decks-list__link' %>
+          <%= link_to 'Add card', new_deck_card_path(deck), class: 'decks-list__link' %>
+          <%= link_to 'Delete', deck_path(deck), data: { 'turbo-method': :delete, turbo_confirm: 'Are you sure you want to delete this deck?'}, class: 'decks-list__link decks-list__link--icon-del' %>
+        </div>
+      </li>
+    <% end %>
+    <li class="decks-list__item decks-list__item--dotted">
+      <div class="decks-list__new-card">
+        <%= link_to 'create new deck', new_deck_path, class: 'decks-list__link decks-list__link--create-card' %>
+      </div>
+    </li>
+   </ul>
+</section>

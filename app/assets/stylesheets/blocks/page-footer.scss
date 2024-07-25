@@ -1,0 +1,19 @@
+.page-footer {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid $border-color;
+  height: 50px;
+
+  p {
+    font-size: 14px;
+  }
+
+  .page-footer__link {
+    color: $text-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

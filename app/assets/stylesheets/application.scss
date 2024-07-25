@@ -1,0 +1,46 @@
+@import "fonts";
+@import "variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+
+  min-height: 100vh;
+}
+
+// Common blocks
+@import "blocks/page-container";
+@import "blocks/page-title";
+@import "blocks/page-form";
+@import "blocks/main-button";
+@import "blocks/border-button";
+@import "blocks/decks-list";
+@import "blocks/cards-list";
+@import "blocks/card";
+
+// Page Header
+@import "blocks/page-header";
+@import "blocks/logo";
+@import "blocks/main-menu";
+@import "blocks/dropdown";
+
+// Page main
+@import "blocks/page-main";
+@import "blocks/home";
+@import "blocks/sing-in";
+@import "blocks/user-profile";
+@import "blocks/decks";
+
+// Page footer
+@import "blocks/page-footer";
+

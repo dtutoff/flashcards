@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>FlashCards</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,6 +11,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="page-header page-container">
+      <div class="logo">
+        <a class="logo__link" href="/">
+          <%= image_tag 'logo-flashcard.png', alt: 'Flashcards logo', class: 'logo__img' %>
+          <p class="logo__text">Flashcards</p>
+        </a>
+      </div>
+      <% if  user_signed_in? %>
+        <%= render 'shared/menu' %>
+      <% end %>
+    </header>
+    <main class="page-main page-container">
+      <%= yield %>
+    </main>
+  <footer class="page-footer page-container">
+    <p>Copyright © 2024 Flashcards app. | Designed by <%= link_to 'DTutov', 'https://github.com/dtutoff', class: 'page-footer__link' %>.</p>
+  </footer>
   </body>
 </html>

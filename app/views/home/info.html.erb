@@ -1,0 +1,8 @@
+<section class="home">
+  <% if user_signed_in? %>
+    <h1>Welcome back <%= current_user[:name] %>!</h1>
+
+    <h3>There will be your statistics on training.</h3>
+    <p>Currently in development!</p>
+  <% end %>
+</section>

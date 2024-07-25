@@ -1,0 +1,20 @@
+<nav class="main-menu">
+  <ul class="main-menu__list">
+    <li class="main-menu__item">
+      <%= link_to "Home", root_path, class: 'main-menu__link'%>
+    </li>
+    <li class="main-menu__item">
+      <%= link_to "Decks", decks_path, class: 'main-menu__link'%>
+    </li>
+    <li class="main-menu__item">
+      <div class="main-menu__dropdown dropdown">
+        <button class="dropdown__button"><%= current_user[:name] %></button>
+        <ul class="dropdown__list">
+          <li class="dropdown__item"><%= link_to "Edit profile", edit_user_path(current_user), class: 'main-menu__link' %></li>
+          <li class="dropdown__item"><%= link_to 'Sing Out', session_path, data: { turbo_method: :delete }, class: 'main-menu__link' %></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</nav>
+
