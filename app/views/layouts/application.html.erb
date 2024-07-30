@@ -23,6 +23,9 @@
       <% end %>
     </header>
     <main class="page-main page-container">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert--#{message_type}") %>
+      <% end %>
       <%= yield %>
     </main>
   <footer class="page-footer page-container">

@@ -1,0 +1,18 @@
+.alert {
+  border: 1px solid $text-color;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.alert--error {
+  color: $error-color;
+  border-color: $error-color;
+  background-color: lighten($error-color, 50%);
+}
+
+.alert--success {
+  color: $success-color;
+  border-color: $success-color;
+  background-color: lighten($success-color, 50%);
+}
