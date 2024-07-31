@@ -2,6 +2,10 @@ class SessionsController < ApplicationController
   before_action :require_user_no_authentication, only: %i[create]
   before_action :require_user_has_authentication, only: %i[destroy]
 
+  def new
+    redirect_to root_path if user_signed_in?
+  end
+
   def create
     user = User.find_by email: params[:email]
     if user&.authenticate(params[:password])
