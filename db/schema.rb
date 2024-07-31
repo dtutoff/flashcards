@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_10_103437) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_30_110933) do
   create_table "cards", force: :cascade do |t|
     t.integer "deck_id"
     t.string "front_side"
@@ -35,6 +35,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_10_103437) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "remember_digest"
   end
 
   add_foreign_key "cards", "decks"
