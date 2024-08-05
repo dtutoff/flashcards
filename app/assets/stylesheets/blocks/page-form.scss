@@ -11,6 +11,14 @@
   margin: 0 0 10px 0;
 }
 
+.page-form__field--checkbox {
+  label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
 .page-form__label {
   font-size: 14px;
   font-weight: 300;
@@ -29,4 +37,8 @@
 
 .page-form__button.main-button {
   width: 100%;
+}
+
+.page-form__checkbox {
+  margin: 0;
 }

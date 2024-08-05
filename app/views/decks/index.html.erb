@@ -4,13 +4,14 @@
   </div>
   <ul class="decks__list decks-list">
     <% @decks.each do |deck| %>
-      <li class="decks-list__item<%= deck.cards.length > 0 ? ' decks-list__item--with-cards' : '' %>">
+      <% cards_in_deck = deck.cards.length %>
+      <li class="decks-list__item<%= cards_in_deck > 0 ? ' decks-list__item--with-cards' : '' %>">
       <h3 class="decks-list__title">
           <%= link_to deck[:name], deck_path(deck), class: 'decks-list__link' %>
         </h3>
         <p class="decks-list__text"><%= format_date_time(deck[:created_at]) %></p>
         <% cards = deck.cards.length %>
-        <p class="decks-list__text"><%= cards > 0 ? "#{deck.cards.length} card#{cards > 1 ? 's' :  ''} inside." : "Empty" %></p>
+        <p class="decks-list__text"><%= cards_in_deck > 0 ? "#{pluralize(cards_in_deck, 'card')} inside." : 'No cards yet.' %></p>
         <div class="decks-list__container">
           <%= link_to 'Edit', edit_deck_path(deck), class: 'decks-list__link' %>
           <%= link_to 'Add card', new_deck_card_path(deck), class: 'decks-list__link' %>

@@ -1,0 +1,7 @@
+.error {
+  border: 1px solid $error-color;
+  background-color: lighten($error-color, 50%);
+  font-size: 12px;
+  padding: 5px;
+  margin-bottom: 15px;
+}

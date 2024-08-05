@@ -8,6 +8,12 @@
       <%= f.label :password, class: 'page-form__label'%>
       <%= f.password_field :password, class: 'page-form__input' %>
     </p>
+    <p class="page-form__field page-form__field--checkbox">
+      <%= f.label :remember_me, class: 'page-form__label' do %>
+        <%= f.check_box :remember_me, class: 'page-form__checkbox', value: '1' %>
+        <span>Remember me on this computer</span>
+      <% end %>
+    </p>
 
     <%= f.submit 'Sing In', class: 'page-form__button main-button' %>
   </div>

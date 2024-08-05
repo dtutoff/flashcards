@@ -1,5 +1,6 @@
 <%= form_with  model: @user do |u| %>
   <div class="page-form">
+    <%= render 'shared/error_messages', object: @user %>
     <p class="page-form__field">
       <%= u.label :name, class: 'page-form__label' %>
       <%= u.text_field :name, placeholder: 'Name', class: 'page-form__input' %>
