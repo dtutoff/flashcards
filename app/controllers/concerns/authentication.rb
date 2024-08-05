@@ -1,18 +1,26 @@
+# frozen_string_literal: true
+
 module Authentication
   extend ActiveSupport::Concern
   included do
     private
 
     def current_user
-      if (user_id = session[:user_id])
-        @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id].present?
-      elsif (user_id = cookies.encrypted[:user_id])
-        user = User.find_by(id: user_id)
-        if user&.authenticated?(cookies[:remember_token])
-          sing_in user
-          @current_user = user
-        end
-      end
+      user_from_cookies if cookies.encrypted[:user_id]
+
+      user_form_session
+    end
+
+    def user_form_session
+      @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id].present?
+    end
+
+    def user_from_cookies
+      user = User.find_by(id: :user_id)
+      return unless user&.authenticated?(cookies[:remember_token])
+
+      sing_in user
+      @current_user = user
     end
 
     def user_signed_in?
